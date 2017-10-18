@@ -93,13 +93,13 @@ For Identifying your users you need to set some properties, for that use the Get
 The **Set** method will accept a predefined object  **MPUserProperties** or an object that inherits from it.
 
 
-`
+```
 var person = mp.GetPeople();
 
 person.Identify("[YOUR_USER_UNIQUE_ID]");    
 
 result = await person.Set(new MPUserProperties() { Created = DateTime.Now, Name = "Jhon Doe", Email = "someone@somewhere.com", Phone = "+525500000000"  });                
-`
+```
 
 
 The **setPushRegistrationId** is used to send push notifications with Mixpanel. First you need to identify the user so the token is stored in it's profile, if you had already identified it skip that step and just call the setPushRegistrationId. Note that the token will be stored based on the OS Type and this will only work with Android or iOS, so check in the GetInstance method the OS Type you are sending.
