@@ -1,6 +1,6 @@
-# MixPanelHttpClient Wiki
+# MixPanelHttpClient
 
-MixPanelHttpClient is a simple MixPanel Http client for C#
+MixPanelHttpClient is a simple MixPanel Http client for C#, it's built with NetStandard 1.4 so you can use it in your Xamarin.Android, Xamarin.iOS and Xamarin.Form.
 
 ## Features
 
