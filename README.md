@@ -39,7 +39,7 @@ or Inherits from
 `BaseUserTrackRequest`
 As follows:
 
-`
+```
 public class MyCustomObject : BaseUserTrackRequest
 {
      public object CustomProperty { get; set; }
@@ -50,7 +50,7 @@ public class MyCustomObject : BaseUserTrackRequest
 var toSend = new MyCustomObject() { DistinctId = testerID, CustomProperty = "Some value", CustomProperty2 = "AnotherValue" };
 
 var result = await mp.TrackAsync("Some Event", toSend);
-`
+```
 
 The DistinctId word is reserved for it will be replaced with the mixpanel reserved word "distinct_id". Reserved property names are at the Reserved Words secction.
 
@@ -61,17 +61,17 @@ Primitive types: string, int, bool etc. (will be passed toString() ),
 Lists,
 Key pair value objects like Dictionary<,> this objects will be added as root of the properties properties, lets say
 
-`
+```
 var someDictionary = new Dictionary<string,string>();
 someDictionary.Add("hello","world");
 someDictionary.Add("goodBye","world");
 mp.TrackAsync<string,object>("Some Event", new { MySimpleProperty = "someValue", ADictionary = someDictionary});
-`
+```
 
 
 This will result in the following json for MixPanel:
 
-`
+```
 {
     "event": "Some Event",
     "properties": {
@@ -81,12 +81,12 @@ This will result in the following json for MixPanel:
         "goodbye": "world"
     }
 }
-`
+```
 
 ***Note*:** The ADictionary (or the name it has) will be replaced with the dictionary properties as showed above.
 
 
-## Operations ##
+## Operations
 
 For Identifying your users you need to set some properties, for that use the GetPeople() method so you can access to the Set method.
 
@@ -95,7 +95,9 @@ The **Set** method will accept a predefined object  **MPUserProperties** or an o
 
 `
 var person = mp.GetPeople();
-person.Identify("[YOUR_USER_UNIQUE_ID]");                
+
+person.Identify("[YOUR_USER_UNIQUE_ID]");    
+
 result = await person.Set(new MPUserProperties() { Created = DateTime.Now, Name = "Jhon Doe", Email = "someone@somewhere.com", Phone = "+525500000000"  });                
 `
 
@@ -103,12 +105,12 @@ result = await person.Set(new MPUserProperties() { Created = DateTime.Now, Name 
 The **setPushRegistrationId** is used to send push notifications with Mixpanel. First you need to identify the user so the token is stored in it's profile, if you had already identified it skip that step and just call the setPushRegistrationId. Note that the token will be stored based on the OS Type and this will only work with Android or iOS, so check in the GetInstance method the OS Type you are sending.
 
 
-`
+```
 MixPanelClient mpclient = MixPanelClient.GetInstance("[YOUR_MIXPANEL_PROJECT_ID", "[Enum MixPanelOSType Android or iOS]");
 var person = mpclient.GetPeople();
 person.Identify("[YOUR_USER_UNIQUE_ID]");
 var res = await person.setPushRegistrationId("[USER PUSH TOKEN]");
-`
+```
 
 ## Reserved Words
 
