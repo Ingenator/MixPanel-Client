@@ -2,6 +2,8 @@
 
 MixPanelHttpClient is a simple MixPanel Http client for C#, it's built with NetStandard 1.4 so you can use it in your Xamarin.Android, Xamarin.iOS and Xamarin.Form.
 
+It include a way to include push notifications tokens for Android and iOS.
+
 ## Features
 
 This Client uses the [API Reference](https://mixpanel.com/help/reference/http) from Mixpanel.
