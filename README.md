@@ -85,7 +85,7 @@ This will result in the following json for MixPanel:
 }
 ```
 
-***Note*:** The ADictionary (or the name it has) will be replaced with the dictionary properties as showed above.
+***Note*:** The Dictionary (or the name it has) will be replaced with the dictionary properties as showed above.
 
 
 ## Operations
