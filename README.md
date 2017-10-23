@@ -22,7 +22,7 @@ And the Following operations:
 
 First you need to initialize the client with your Mixpanel Proyect Token and the OS of the host:
 
-`MixPanelClient mpclient = MixPanelClient.GetInstance("[YOUR_MIXPANEL_PROJECT_ID", "[Enum MixPanelOSType]");`
+`MixPanelClient mp = MixPanelClient.GetInstance("[YOUR_MIXPANEL_PROJECT_ID", "[Enum MixPanelOSType]");`
 
 Now your are ready to start tracking your events:
 
